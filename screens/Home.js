@@ -1,20 +1,55 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Linking,
+  Platform
+} from "react-native";
+import Carousel from "react-native-snap-carousel";
+
 
 const Home = props => {
+  const sipem = 4531419;
+  const policia = 911;
+  const bomberos = 100;
+  makeCall = number => {
+    let phoneNumber = "";
+    if (Platform.OS === "android") {
+      phoneNumber = `tel:${number}`;
+    } else {
+      phoneNumber = `telprompt:${number}`;
+    }
+    Linking.openURL(phoneNumber);
+  };
   console.log(props);
   return (
     <View style={styles.screen}>
-      <Text>Home</Text>
       <View style={styles.sipem}>
-        <Button title="SIPEM" />
+        <Button
+          title="SIPEM"
+          onPress={() => {
+            makeCall(sipem);
+          }}
+        />
       </View>
       <View style={styles.buttonContainer}>
         <View style={styles.button}>
-          <Button title="Policia" />
+          <Button
+            title="Policia"
+            onPress={() => {
+              makeCall(policia);
+            }}
+          />
         </View>
         <View style={styles.button}>
-          <Button title="Bomberos" />
+          <Button
+            title="Bomberos"
+            onPress={() => {
+              makeCall(bomberos);
+            }}
+          />
         </View>
       </View>
       <View style={styles.secretariaGenero}>
@@ -22,6 +57,14 @@ const Home = props => {
           title="Secretaria de Genero"
           onPress={() => {
             props.navigation.navigate({ routeName: "Genero" });
+          }}
+        />
+      </View>
+      <View style={styles.talleres}>
+        <Button
+          title="talleres"
+          onPress={() => {
+            props.navigation.navigate({ routeName: "Talleres" });
           }}
         />
       </View>
@@ -50,7 +93,11 @@ const styles = StyleSheet.create({
   button: {
     width: 150
   },
-  secretariaGenero:{
+  secretariaGenero: {
+    width: "100%"
+  },
+  talleres: {
+    paddingTop: 10,
     width: "100%"
   }
 });
