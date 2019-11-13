@@ -14,6 +14,7 @@ const Home = props => {
   const sipem = 4531419;
   const policia = 911;
   const bomberos = 100;
+  
   makeCall = number => {
     let phoneNumber = "";
     if (Platform.OS === "android") {
