@@ -16,7 +16,11 @@ const AppNavigator = createStackNavigator(
     Home: Home,
     Genero: InformacionUtilGenero,
     Talleres: Talleres,
-    TallerDetalle: TallerDetalle
+    TallerDetalle: TallerDetalle,
+    MapaDeEmergencia: MapaDeEmergencia,
+    InformacionUtil: InformacionUtil,
+    DOE: DOE,
+    InformacionUtilGenero: InformacionUtilGenero
   },
 
   {
@@ -35,7 +39,7 @@ const MainNavigator = createDrawerNavigator(
     InformacionUtil: InformacionUtil,
     DOE: DOE,
     InformacionUtilGenero: InformacionUtilGenero,
-    Talleres: Talleres,
+    Talleres: Talleres
   },
   {
     defaultNavigationOptions: {

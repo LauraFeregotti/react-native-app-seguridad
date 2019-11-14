@@ -10,6 +10,11 @@ const InformacionUtilGenero = props => {
     </View>
     );
 };
+InformacionUtilGenero.navigationOptions = {
+  headerTitle: "InformacionUtilGenero",
+ 
+};
+
 
 const styles = StyleSheet.create({
     screen: {

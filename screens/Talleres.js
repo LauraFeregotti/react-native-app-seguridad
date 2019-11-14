@@ -4,23 +4,29 @@ import {
   Text,
   View,
   FlatList,
-  TouchableOpacity,
+  TouchableOpacity
 } from "react-native";
 import { CATEGORIES } from "../Data/Dummy-data";
-import Constant from "../constants/Colors"
+import Constant from "../constants/Colors";
 import Colors from "../constants/Colors";
-import ListaDeTalleres from "../components/ListaDeTalleres"
+import ListaDeTalleres from "../components/ListaDeTalleres";
 
 const Talleres = props => {
   const renderGridItem = itemData => {
-    return <ListaDeTalleres title={itemData.item.title} image={itemData.item.imageUrl} onSelect={()=>{
-      props.navigation.navigate({
-          routeName: "TallerDetalle",
-          params: {
-            tallerId: itemData.item.id
-          }
-        });
-      }} />
+    return (
+      <ListaDeTalleres
+        title={itemData.item.title}
+        image={itemData.item.imageUrl}
+        onSelect={() => {
+          props.navigation.navigate({
+            routeName: "TallerDetalle",
+            params: {
+              tallerId: itemData.item.id
+            }
+          });
+        }}
+      />
+    );
   };
   return (
     <FlatList
@@ -32,8 +38,7 @@ const Talleres = props => {
   );
 };
 Talleres.navigationOptions = {
-    headerTitle: "Talleres",
-   
+  headerTitle: "Talleres"
 };
 
 const styles = StyleSheet.create({
@@ -42,8 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center"
-  },
- 
+  }
 });
 
 export default Talleres;

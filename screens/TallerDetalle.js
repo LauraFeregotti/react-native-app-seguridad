@@ -10,7 +10,7 @@ const TallerDetalle = props => {
     <View style={styles.screen}>
       <View style={styles.container}>
         <ImageBackground
-          source={{ uri: tallerSeleccionado.image}}
+          source={{ uri: tallerSeleccionado.image }}
           style={styles.bgImage}
         />
         <Text style={styles.title}>{tallerSeleccionado.title}</Text>
@@ -23,15 +23,15 @@ const TallerDetalle = props => {
       </View>
     </View>
   );
-}; 
- TallerDetalle.navigationOptions = navigationData => {
- console.log(navigationData);
- const tallerId = navigationData.navigation.getParam("tallerId");
+};
+TallerDetalle.navigationOptions = navigationData => {
+  console.log(navigationData);
+  const tallerId = navigationData.navigation.getParam("tallerId");
   const tallerSeleccionado = CATEGORIES.find(taller => taller.id === tallerId);
   return {
     headerTitle: tallerSeleccionado.title
   };
-};  
+};
 const styles = StyleSheet.create({
   screen: {
     flex: 1,

@@ -8,7 +8,7 @@ import {
   Platform
 } from "react-native";
 import Carousel from "react-native-snap-carousel";
-import {HeaderButtons, Item} from "react-navigation-header-buttons";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/HeaderButtons";
 import { Colors } from "react-native-paper";
 
@@ -34,6 +34,7 @@ const Home = props => {
           onPress={() => {
             makeCall(sipem);
           }}
+          color="black"
         />
       </View>
       <View style={styles.buttonContainer}>
@@ -43,6 +44,7 @@ const Home = props => {
             onPress={() => {
               makeCall(policia);
             }}
+            color="black"
           />
         </View>
         <View style={styles.button}>
@@ -51,25 +53,31 @@ const Home = props => {
             onPress={() => {
               makeCall(bomberos);
             }}
+            color="black"
           />
         </View>
       </View>
       <View style={styles.secretariaGenero}>
         <Text>Secretaria de Género</Text>
-        <Text>Mail de la secretaría</Text>
+        <Text>Mail de la secretaría...</Text>
       </View>
-   
     </View>
   );
 };
 Home.navigationOptions = navData => {
   return {
-      headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton}>
-    <Item title="Menu" iconName="ios-menu" onPress={()=>{
-      navData.navigation.toggleDrawer();}} ></Item>
-  </HeaderButtons>
-  }
-
+    headerLeft: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Menu"
+          iconName="ios-menu"
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        ></Item>
+      </HeaderButtons>
+    )
+  };
 };
 
 const styles = StyleSheet.create({
@@ -79,7 +87,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "flex-start"
+    justifyContent: "center"
   },
   buttonContainer: {
     flexDirection: "row",
@@ -87,15 +95,20 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     justifyContent: "space-between"
   },
+
   sipem: {
     width: "100%"
   },
   button: {
-    width: 150
+    width: 150,
   },
   secretariaGenero: {
     width: "100%",
-    backgroundColor: Colors.primaryColor,
+    backgroundColor:"#7c96bf",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
+    color: "white",
   },
   talleres: {
     paddingTop: 10,
