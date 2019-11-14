@@ -9,12 +9,11 @@ import {
 } from "react-native";
 import Carousel from "react-native-snap-carousel";
 
-
 const Home = props => {
   const sipem = 4531419;
   const policia = 911;
   const bomberos = 100;
-  
+
   makeCall = number => {
     let phoneNumber = "";
     if (Platform.OS === "android") {
@@ -24,7 +23,6 @@ const Home = props => {
     }
     Linking.openURL(phoneNumber);
   };
-  console.log(props);
   return (
     <View style={styles.screen}>
       <View style={styles.sipem}>

@@ -1,8 +1,11 @@
 class Category {
-    constructor(id, title, color) {
+    constructor(id, title, imageUrl, fecha, horario, descripcion) {
       this.id = id;
       this.title = title;
-      this.color = color;
+      this.imageUrl = imageUrl;
+      this.fecha = fecha;
+      this.horario = horario;
+      this.descripcion = descripcion;
     }
   }
   
