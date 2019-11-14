@@ -4,7 +4,7 @@ import {
   Text,
   View,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import { CATEGORIES } from "../Data/Dummy-data";
 import Constant from "../constants/Colors"
@@ -13,7 +13,7 @@ import ListaDeTalleres from "../components/ListaDeTalleres"
 
 const Talleres = props => {
   const renderGridItem = itemData => {
-    return <ListaDeTalleres title={itemData.item.title} onSelect={()=>{
+    return <ListaDeTalleres title={itemData.item.title} image={itemData.item.imageUrl} onSelect={()=>{
       props.navigation.navigate({
           routeName: "TallerDetalle",
           params: {

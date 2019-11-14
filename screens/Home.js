@@ -8,6 +8,9 @@ import {
   Platform
 } from "react-native";
 import Carousel from "react-native-snap-carousel";
+import {HeaderButtons, Item} from "react-navigation-header-buttons";
+import HeaderButton from "../components/HeaderButtons";
+import { Colors } from "react-native-paper";
 
 const Home = props => {
   const sipem = 4531419;
@@ -52,23 +55,21 @@ const Home = props => {
         </View>
       </View>
       <View style={styles.secretariaGenero}>
-        <Button
-          title="Secretaria de Genero"
-          onPress={() => {
-            props.navigation.navigate({ routeName: "Genero" });
-          }}
-        />
+        <Text>Secretaria de Género</Text>
+        <Text>Mail de la secretaría</Text>
       </View>
-      <View style={styles.talleres}>
-        <Button
-          title="talleres"
-          onPress={() => {
-            props.navigation.navigate({ routeName: "Talleres" });
-          }}
-        />
-      </View>
+   
     </View>
   );
+};
+Home.navigationOptions = navData => {
+  return {
+      headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton}>
+    <Item title="Menu" iconName="ios-menu" onPress={()=>{
+      navData.navigation.toggleDrawer();}} ></Item>
+  </HeaderButtons>
+  }
+
 };
 
 const styles = StyleSheet.create({
@@ -93,7 +94,8 @@ const styles = StyleSheet.create({
     width: 150
   },
   secretariaGenero: {
-    width: "100%"
+    width: "100%",
+    backgroundColor: Colors.primaryColor,
   },
   talleres: {
     paddingTop: 10,
