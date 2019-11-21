@@ -34,7 +34,7 @@ const Home = props => {
           onPress={() => {
             makeCall(sipem);
           }}
-          color="black"
+          color="#7c96bf"
         />
       </View>
       <View style={styles.buttonContainer}>
@@ -44,7 +44,7 @@ const Home = props => {
             onPress={() => {
               makeCall(policia);
             }}
-            color="black"
+            color="#7c96bf"
           />
         </View>
         <View style={styles.button}>
@@ -53,7 +53,7 @@ const Home = props => {
             onPress={() => {
               makeCall(bomberos);
             }}
-            color="black"
+            color="#7c96bf"
           />
         </View>
       </View>
