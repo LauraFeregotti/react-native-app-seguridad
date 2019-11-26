@@ -11,6 +11,7 @@ import Carousel from "react-native-snap-carousel";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/HeaderButtons";
 import { Colors } from "react-native-paper";
+import MyCarousel from "../components/carousel";
 
 const Home = props => {
   const sipem = 4531419;
@@ -28,6 +29,7 @@ const Home = props => {
   };
   return (
     <View style={styles.screen}>
+      <MyCarousel />
       <View style={styles.sipem}>
         <Button
           title="SIPEM"
@@ -59,7 +61,7 @@ const Home = props => {
       </View>
       <View style={styles.secretariaGenero}>
         <Text>Secretaria de Género</Text>
-        <Text>Mail de la secretaría...</Text>
+        <Text>Mail de la secretaría</Text>
       </View>
     </View>
   );
@@ -79,7 +81,6 @@ Home.navigationOptions = navData => {
     )
   };
 };
-
 const styles = StyleSheet.create({
   screen: {
     width: "100%",
@@ -100,15 +101,15 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   button: {
-    width: 150,
+    width: 150
   },
   secretariaGenero: {
     width: "100%",
-    backgroundColor:"#7c96bf",
+    backgroundColor: "#7c96bf",
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
-    color: "white",
+    color: "white"
   },
   talleres: {
     paddingTop: 10,
