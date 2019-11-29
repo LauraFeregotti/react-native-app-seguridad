@@ -4,8 +4,7 @@ import Home from "../screens/Home";
 import Talleres from "../screens/Talleres";
 import TallerDetalle from "../screens/TallerDetalle";
 import MapaDeEmergencia from "../screens/MapaDeEmergencia";
-import InformacionUtil from "../screens/InformacionUtil";
-import InformacionUtilGenero from "../screens/InformacionUtilGenero";
+import SecretariaDeGenero from "../screens/SecretariaDeGenero";
 import DOE from "../screens/DOE";
 import Colors from "../constants/Colors";
 import { Platform } from "react-native";
@@ -14,13 +13,12 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 const AppNavigator = createStackNavigator(
   {
     Home: Home,
-    Genero: InformacionUtilGenero,
+    Genero: SecretariaDeGenero,
     Talleres: Talleres,
     TallerDetalle: TallerDetalle,
     MapaDeEmergencia: MapaDeEmergencia,
-    InformacionUtil: InformacionUtil,
     DOE: DOE,
-    InformacionUtilGenero: InformacionUtilGenero
+    SecretariaDeGenero: SecretariaDeGenero
   },
 
   {
@@ -34,12 +32,11 @@ const AppNavigator = createStackNavigator(
 );
 const MainNavigator = createDrawerNavigator(
   {
-    Home: AppNavigator,
-    MapaDeEmergencia: MapaDeEmergencia,
-    InformacionUtil: InformacionUtil,
-    DOE: DOE,
-    InformacionUtilGenero: InformacionUtilGenero,
-    Talleres: Talleres
+    Home: { screen: AppNavigator, navigationOptions: { drawerLabel: "Home" } },
+    MapaDeEmergencia: { screen: MapaDeEmergencia, navigationOptions: { drawerLabel: "Mapa de emergencia" } },
+    Talleres: { screen: Talleres, navigationOptions: { drawerLabel: "Talleres" } },
+    SecretariaDeGenero: { screen: SecretariaDeGenero, navigationOptions: { drawerLabel: "Secretaria de Genero" } },
+    DOE: { screen: DOE, navigationOptions: { drawerLabel: "Dirección de orientación al estudiante" } },
   },
   {
     defaultNavigationOptions: {

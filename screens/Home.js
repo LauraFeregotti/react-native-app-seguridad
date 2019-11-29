@@ -12,6 +12,7 @@ import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/HeaderButtons";
 import { Colors } from "react-native-paper";
 import MyCarousel from "../components/carousel";
+import Header from "../components/Header";
 
 const Home = props => {
   const sipem = 4531419;
@@ -36,7 +37,7 @@ const Home = props => {
           onPress={() => {
             makeCall(sipem);
           }}
-          color="#7c96bf"
+          color="#005b5c"
         />
       </View>
       <View style={styles.buttonContainer}>
@@ -46,7 +47,7 @@ const Home = props => {
             onPress={() => {
               makeCall(policia);
             }}
-            color="#7c96bf"
+            color="#005b5c"
           />
         </View>
         <View style={styles.button}>
@@ -55,13 +56,9 @@ const Home = props => {
             onPress={() => {
               makeCall(bomberos);
             }}
-            color="#7c96bf"
+            color="#005b5c"
           />
         </View>
-      </View>
-      <View style={styles.secretariaGenero}>
-        <Text>Secretaria de Género</Text>
-        <Text>Mail de la secretaría</Text>
       </View>
     </View>
   );

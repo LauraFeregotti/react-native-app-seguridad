@@ -10,6 +10,9 @@ const MapaDeEmergencia = props => {
     </View>
     );
 };
+MapaDeEmergencia.navigationOptions = {
+  headerTitle: "Mapa de emergencia"
+};
 
 const styles = StyleSheet.create({
     screen: {

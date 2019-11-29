@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const InformacionUtilGenero = props => {
+const SecretariaDeGenero = props => {
      return (
         <View style={styles.screen}>
             <Text>
@@ -10,8 +10,8 @@ const InformacionUtilGenero = props => {
     </View>
     );
 };
-InformacionUtilGenero.navigationOptions = {
-  headerTitle: "InformacionUtilGenero",
+SecretariaDeGenero.navigationOptions = {
+  headerTitle: "Secretaria de Genero"
  
 };
 
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default InformacionUtilGenero;
+export default SecretariaDeGenero;
