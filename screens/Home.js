@@ -5,7 +5,9 @@ import {
   View,
   Button,
   Linking,
-  Platform
+  Platform,
+  Image,
+  ImageBackground
 } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
@@ -29,38 +31,48 @@ const Home = props => {
     Linking.openURL(phoneNumber);
   };
   return (
-    <View style={styles.screen}>
-      <MyCarousel />
-      <View style={styles.sipem}>
-        <Button
-          title="SIPEM"
-          onPress={() => {
-            makeCall(sipem);
-          }}
-          color="#005b5c"
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <View style={styles.button}>
+    <ImageBackground
+      style={styles.background}
+      source={require("../assets/background.png")}
+      imageStyle={{ opacity: 0.1 }}
+    >
+      <View style={styles.screen2}>
+        <Image
+          style={styles.logo}
+          source={require("../assets/logo.png")}
+        ></Image>
+        <MyCarousel />
+        <View style={styles.sipem}>
           <Button
-            title="Policia"
+            title="SIPEM"
             onPress={() => {
-              makeCall(policia);
+              makeCall(sipem);
             }}
             color="#005b5c"
           />
         </View>
-        <View style={styles.button}>
-          <Button
-            title="Bomberos"
-            onPress={() => {
-              makeCall(bomberos);
-            }}
-            color="#005b5c"
-          />
+        <View style={styles.buttonContainer}>
+          <View style={styles.button}>
+            <Button
+              title="Policia"
+              onPress={() => {
+                makeCall(policia);
+              }}
+              color="#005b5c"
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="Bomberos"
+              onPress={() => {
+                makeCall(bomberos);
+              }}
+              color="#005b5c"
+            />
+          </View>
         </View>
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 Home.navigationOptions = navData => {
@@ -79,9 +91,18 @@ Home.navigationOptions = navData => {
   };
 };
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    resizeMode: "cover"
+  },
+  screen2: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 10
+  },
   screen: {
     width: "100%",
-    padding: 10,
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
@@ -111,6 +132,11 @@ const styles = StyleSheet.create({
   talleres: {
     paddingTop: 10,
     width: "100%"
+  },
+  logo: {
+    width: 148,
+    height: 58.281,
+    margin: 20
   }
 });
 

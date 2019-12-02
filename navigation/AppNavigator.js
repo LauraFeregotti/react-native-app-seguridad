@@ -33,10 +33,24 @@ const AppNavigator = createStackNavigator(
 const MainNavigator = createDrawerNavigator(
   {
     Home: { screen: AppNavigator, navigationOptions: { drawerLabel: "Home" } },
-    MapaDeEmergencia: { screen: MapaDeEmergencia, navigationOptions: { drawerLabel: "Mapa de emergencia" } },
-    Talleres: { screen: Talleres, navigationOptions: { drawerLabel: "Talleres" } },
-    SecretariaDeGenero: { screen: SecretariaDeGenero, navigationOptions: { drawerLabel: "Secretaria de Genero" } },
-    DOE: { screen: DOE, navigationOptions: { drawerLabel: "Dirección de orientación al estudiante" } },
+    MapaDeEmergencia: {
+      screen: MapaDeEmergencia,
+      navigationOptions: { drawerLabel: "Mapa de emergencia" }
+    },
+    Talleres: {
+      screen: Talleres,
+      navigationOptions: { drawerLabel: "Talleres" }
+    },
+    SecretariaDeGenero: {
+      screen: SecretariaDeGenero,
+      navigationOptions: { drawerLabel: "Secretaria de Genero" }
+    },
+    DOE: {
+      screen: DOE,
+      navigationOptions: {
+        drawerLabel: "Dirección de orientación al estudiante"
+      }
+    }
   },
   {
     defaultNavigationOptions: {

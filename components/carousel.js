@@ -38,9 +38,6 @@ const MyCarousel = props => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={goForward}>
-        <Text>go to next slide</Text>
-      </TouchableOpacity>
       <Carousel
         ref={carouselRef}
         sliderWidth={screenWidth}
@@ -75,7 +72,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover"
   },
   bgImage: {
-    height: 100,
-    width: 100
+    height: 200,
+    width: 200
   }
 });
