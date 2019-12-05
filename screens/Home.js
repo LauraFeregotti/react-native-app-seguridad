@@ -106,7 +106,8 @@ const styles = StyleSheet.create({
   subtitulo: {
     color: "#878686",
     fontSize: 13,
-    marginTop: 5
+    marginTop: 5,
+    fontFamily: "nunito-light",
   },
   containerSubtitulo: {
     padding: 5,
@@ -121,7 +122,9 @@ const styles = StyleSheet.create({
   textSipem: {
     color: "#005b5c",
     marginLeft: 25,
-    fontSize: 20
+    fontSize: 20,
+    fontFamily: "nunito-extra-bold",
+   
   },
   bomberosButton: {
     flex: 1,
@@ -148,6 +151,7 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontSize: 14,
+    fontFamily: "nunito-extra-bold",
   },
   sipemButton: {
     borderRadius: 25,

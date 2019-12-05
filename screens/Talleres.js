@@ -38,7 +38,10 @@ const Talleres = props => {
   );
 };
 Talleres.navigationOptions = {
-  headerTitle: "Talleres"
+  headerTitle: "Talleres",
+  headerTitleStyle: {
+    fontFamily:"nunito-light", 
+  },
 };
 
 const styles = StyleSheet.create({

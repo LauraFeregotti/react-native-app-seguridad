@@ -27,7 +27,8 @@ const AppNavigator = createStackNavigator(
         backgroundColor: Platform.OS === "android" ? Colors.primaryColor : ""
       },
       headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor
-    }
+    },
+    
   }
 );
 const MainNavigator = createDrawerNavigator(
@@ -58,11 +59,14 @@ const MainNavigator = createDrawerNavigator(
         backgroundColor: Platform.OS === "android" ? Colors.primaryColor : ""
       },
       headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor
+    },
+    headerTitleStyle: {
+      fontFamily:"nunito-light", 
     }
   },
   {
     contentOptions: {
-      activeTintColor: Colors.primaryColor,
+      activeTintColor: Colors.primaryColor
     }
   }
 );

@@ -9,7 +9,7 @@ import { Provider as PaperProvider } from "react-native-paper";
 useScreens();
 
 const fetchFonts = () => {
-  Font.loadAsync({
+ return Font.loadAsync({
     "nunito-extra-bold": require("./assets/fonts/Nunito-ExtraBold.ttf"),
     "nunito-light": require("./assets/fonts/Nunito-Light.ttf")
   });

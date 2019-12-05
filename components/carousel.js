@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Text
 } from "react-native";
+import { Colors } from "react-native-paper";
 
 const { width: screenWidth } = Dimensions.get("window");
 
@@ -42,7 +43,7 @@ const MyCarousel = props => {
         ref={carouselRef}
         sliderWidth={screenWidth}
         sliderHeight={screenWidth}
-        itemWidth={screenWidth - 100}
+        itemWidth={screenWidth - 10}
         data={CATEGORIES}
         renderItem={_renderItem}
         hasParallaxImages={true}
@@ -56,11 +57,11 @@ export default MyCarousel;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom:10,
+    marginBottom:5,
   },
   item: {
-    width: screenWidth - 100,
-    height: screenWidth - 100
+    width: 630.364,
+    height: 354.579,
   },
   imageContainer: {
     flex: 1,
@@ -73,10 +74,14 @@ const styles = StyleSheet.create({
     resizeMode: "cover"
   },
   bgImage: {
-    height: 200,
-    width: 200
+    width: 630.364,
+    height: 354.579,
   },
   title:{
     margin: 10,
+    position: "absolute",
+    fontFamily: "nunito-light",
+    color: "#005b5c",
+   
   },
 });

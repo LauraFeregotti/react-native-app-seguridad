@@ -60,14 +60,20 @@ const styles = StyleSheet.create({
   },
   fecha: {
     fontSize: 12,
-    flex: 1
+    flex: 1,
+    color: "white",
+    fontFamily: "nunito-light",
   },
   horario: {
     fontSize: 12,
-    flex: 1
+    flex: 1,
+    color: "white",
+    fontFamily: "nunito-light",
   },
   descripcion: {
-    fontSize: 13
+    fontSize: 13,
+    color: "white",
+    fontFamily: "nunito-light",
   },
   bgImage: {
     width: 100,

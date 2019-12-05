@@ -26,8 +26,9 @@ const ListaDeTalleres = props => {
 const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
-    margin: 15,
-    height: 150,
+    margin: 8,
+    height:138.623,
+    width: 246.44,
     elevation: 3,
   },
   tallerItem: {
@@ -35,16 +36,19 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 10,
     padding: 10,
-    justifyContent: "flex-end",
-    alignItems: "flex-end"
+    justifyContent: "center",
+    alignItems: "center"
   },
   title: {
     fontFamily: "nunito-extra-bold",
-    fontSize: 12
+    color: "white",
+    fontSize: 12,
+    marginTop: 5,
   },
   bgImage: {
-    height: 100,
-    width: 100
+    height: 86.859,
+    width: 154.417,
+    padding: 5,
   }
 });
 
