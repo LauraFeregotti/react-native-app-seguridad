@@ -66,20 +66,20 @@ const Home = props => {
             <TouchableOpacity
               style={styles.policiaButton}
               onPress={() => {
-                makeCall(policia);
+                makeCall(bomberos);
               }}
             >
-              <Text style={styles.text}>Policia</Text>
+              <Text style={styles.text}>Bomberos</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.button}>
             <TouchableOpacity
               style={styles.policiaButton}
               onPress={() => {
-                makeCall(bomberos);
+                makeCall(policia);
               }}
             >
-              <Text style={styles.text}>Bomberos</Text>
+              <Text style={styles.text}>Policia</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -103,10 +103,10 @@ Home.navigationOptions = navData => {
   };
 };
 const styles = StyleSheet.create({
- 
   subtitulo: {
     color: "#878686",
-    fontSize: 13
+    fontSize: 13,
+    marginTop: 5
   },
   containerSubtitulo: {
     padding: 5,
@@ -116,25 +116,27 @@ const styles = StyleSheet.create({
   cross: {
     width: 55,
     height: 55,
-    marginRight: 20
+    marginRight: 25
   },
   textSipem: {
     color: "#005b5c",
-    marginLeft: 20,
+    marginLeft: 25,
     fontSize: 20
   },
   policiaButton: {
     flex: 1,
     borderRadius: 400,
     backgroundColor: "#005b5c",
-    marginRight: 20,
-    marginLeft: 20,
+    marginRight: 10,
+    marginLeft: 10,
     padding: 20,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    
   },
   text: {
-    color: "white"
+    color: "white",
+    fontSize: 16,
   },
   sipemButton: {
     borderRadius: 25,
@@ -142,7 +144,7 @@ const styles = StyleSheet.create({
     borderColor: "#005b5c",
     backgroundColor: "white",
     padding: 16,
-    width: "75%",
+    width: "70%",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row"
@@ -195,8 +197,9 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 148,
-    height: 58.281,
-    margin: 20
+    height: 60.688,
+    margin: 20,
+    padding: 5
   }
 });
 
