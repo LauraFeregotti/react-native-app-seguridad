@@ -42,7 +42,7 @@ const MyCarousel = props => {
         ref={carouselRef}
         sliderWidth={screenWidth}
         sliderHeight={screenWidth}
-        itemWidth={screenWidth - 60}
+        itemWidth={screenWidth - 100}
         data={CATEGORIES}
         renderItem={_renderItem}
         hasParallaxImages={true}
@@ -55,11 +55,12 @@ export default MyCarousel;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    marginBottom:10,
   },
   item: {
-    width: screenWidth - 60,
-    height: screenWidth - 60
+    width: screenWidth - 100,
+    height: screenWidth - 100
   },
   imageContainer: {
     flex: 1,
@@ -74,5 +75,8 @@ const styles = StyleSheet.create({
   bgImage: {
     height: 200,
     width: 200
-  }
+  },
+  title:{
+    margin: 10,
+  },
 });

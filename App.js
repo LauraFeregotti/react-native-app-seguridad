@@ -10,8 +10,8 @@ useScreens();
 
 const fetchFonts = () => {
   Font.loadAsync({
-    "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
-    "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf")
+    "nunito-extra-bold": require("./assets/fonts/Nunito-ExtraBold.ttf"),
+    "nunito-light": require("./assets/fonts/Nunito-Light.ttf")
   });
 };
 
@@ -24,6 +24,7 @@ export default function App() {
         <AppLoading
           startAsync={fetchFonts}
           onFinish={() => setFontloaded(true)}
+         
         />
       </PaperProvider>
     );

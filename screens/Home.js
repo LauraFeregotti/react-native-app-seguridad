@@ -7,7 +7,8 @@ import {
   Linking,
   Platform,
   Image,
-  ImageBackground
+  ImageBackground,
+  TouchableOpacity
 } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
@@ -41,34 +42,45 @@ const Home = props => {
           style={styles.logo}
           source={require("../assets/logo.png")}
         ></Image>
-        <MyCarousel />
-        <View style={styles.sipem}>
-          <Button
-            title="SIPEM"
+        <MyCarousel style={styles.carousel} />
+        <View style={styles.sipemContainer}>
+          <TouchableOpacity
+            style={styles.sipemButton}
             onPress={() => {
               makeCall(sipem);
             }}
-            color="#005b5c"
-          />
+          >
+            <Image
+              style={styles.cross}
+              source={require("../assets/emergencia-sipem-icono.png")}
+            ></Image>
+            <Text style={styles.textSipem}>SIPEM</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.containerSubtitulo}>
+          <Text style={styles.subtitulo}>Emergencias y urgencias médicas</Text>
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
-            <Button
-              title="Policia"
+            <TouchableOpacity
+              style={styles.policiaButton}
               onPress={() => {
                 makeCall(policia);
               }}
-              color="#005b5c"
-            />
+            >
+              <Text style={styles.text}>Policia</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.button}>
-            <Button
-              title="Bomberos"
+            <TouchableOpacity
+              style={styles.policiaButton}
               onPress={() => {
                 makeCall(bomberos);
               }}
-              color="#005b5c"
-            />
+            >
+              <Text style={styles.text}>Bomberos</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -91,6 +103,50 @@ Home.navigationOptions = navData => {
   };
 };
 const styles = StyleSheet.create({
+ 
+  subtitulo: {
+    color: "#878686",
+    fontSize: 13
+  },
+  containerSubtitulo: {
+    padding: 5,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  cross: {
+    width: 55,
+    height: 55,
+    marginRight: 20
+  },
+  textSipem: {
+    color: "#005b5c",
+    marginLeft: 20,
+    fontSize: 20
+  },
+  policiaButton: {
+    flex: 1,
+    borderRadius: 400,
+    backgroundColor: "#005b5c",
+    marginRight: 20,
+    marginLeft: 20,
+    padding: 20,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  text: {
+    color: "white"
+  },
+  sipemButton: {
+    borderRadius: 25,
+    borderWidth: 2.5,
+    borderColor: "#005b5c",
+    backgroundColor: "white",
+    padding: 16,
+    width: "75%",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row"
+  },
   background: {
     flex: 1,
     resizeMode: "cover"
@@ -98,28 +154,30 @@ const styles = StyleSheet.create({
   screen2: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
-    padding: 10
+    justifyContent: "center"
   },
   screen: {
     width: "100%",
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: "#fff"
   },
   buttonContainer: {
     flexDirection: "row",
     width: "100%",
     paddingVertical: 20,
-    justifyContent: "space-between"
+    justifyContent: "center",
+    alignItems: "center"
   },
 
-  sipem: {
-    width: "100%"
+  sipemContainer: {
+    width: "95%",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: 25
   },
   button: {
-    width: 150
+    width: 150,
+    borderRadius: 20
   },
   secretariaGenero: {
     width: "100%",
@@ -131,7 +189,9 @@ const styles = StyleSheet.create({
   },
   talleres: {
     paddingTop: 10,
-    width: "100%"
+    paddingBottom: 10,
+    width: "100%",
+    height: "100%"
   },
   logo: {
     width: 148,
