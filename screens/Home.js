@@ -64,7 +64,7 @@ const Home = props => {
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
             <TouchableOpacity
-              style={styles.policiaButton}
+              style={styles.bomberosButton}
               onPress={() => {
                 makeCall(bomberos);
               }}
@@ -123,12 +123,23 @@ const styles = StyleSheet.create({
     marginLeft: 25,
     fontSize: 20
   },
+  bomberosButton: {
+    flex: 1,
+    borderRadius: 400,
+    backgroundColor: "#005b5c",
+    marginLeft:30,
+    marginRight:10,
+    padding: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    
+  },
   policiaButton: {
     flex: 1,
     borderRadius: 400,
     backgroundColor: "#005b5c",
-    marginRight: 10,
-    marginLeft: 10,
+    marginRight:30,
+    marginLeft:10,
     padding: 20,
     alignItems: "center",
     justifyContent: "center",
@@ -136,7 +147,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
-    fontSize: 16,
+    fontSize: 14,
   },
   sipemButton: {
     borderRadius: 25,

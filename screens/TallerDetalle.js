@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     elevation: 3
   },
   title: {
-    fontFamily: "open-sans-bold",
+    fontFamily: "nunito-extra-bold",
     fontSize: 20,
     color: "white"
   },

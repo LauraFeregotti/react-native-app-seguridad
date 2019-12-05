@@ -59,6 +59,11 @@ const MainNavigator = createDrawerNavigator(
       },
       headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor
     }
+  },
+  {
+    contentOptions: {
+      activeTintColor: Colors.primaryColor,
+    }
   }
 );
 

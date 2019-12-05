@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-end"
   },
   title: {
-    fontFamily: "open-sans-bold",
+    fontFamily: "nunito-extra-bold",
     fontSize: 12
   },
   bgImage: {
