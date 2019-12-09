@@ -11,7 +11,8 @@ const MapaDeEmergencia = props => {
     );
 };
 MapaDeEmergencia.navigationOptions = {
-  headerTitle: "Mapa de emergencia"
+  headerTitle: "Mapa de emergencia",
+
 };
 
 const styles = StyleSheet.create({

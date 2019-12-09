@@ -1,7 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Dimensions
+} from "react-native";
 import { CATEGORIES } from "../Data/Dummy-data";
 import Colors from "../constants/Colors";
+
+const { width: screenWidth } = Dimensions.get("window");
 
 const TallerDetalle = props => {
   const tallerId = props.navigation.getParam("tallerId");
@@ -10,13 +18,15 @@ const TallerDetalle = props => {
     <View style={styles.screen}>
       <View style={styles.container}>
         <ImageBackground
-          source={{ uri: tallerSeleccionado.image }}
+          source={{ uri: tallerSeleccionado.imageUrl }}
           style={styles.bgImage}
         />
+
         <Text style={styles.title}>{tallerSeleccionado.title}</Text>
+
         <View style={styles.contenedorFechaHorario}>
-          <Text style={styles.fecha}>{tallerSeleccionado.fecha} </Text>
-          <Text style={styles.horario}>{tallerSeleccionado.horario}</Text>
+          <Text style={styles.fecha}> Fecha: {tallerSeleccionado.fecha} </Text>
+          <Text style={styles.horario}>Hora: {tallerSeleccionado.horario}</Text>
         </View>
 
         <Text style={styles.descripcion}>{tallerSeleccionado.descripcion}</Text>
@@ -41,43 +51,50 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    alignItems: "center",
     justifyContent: "flex-start",
-    padding: 20,
-    margin: 20,
-    backgroundColor: Colors.primaryColor,
+    margin: 10,
     borderRadius: 10,
-    elevation: 3
+    elevation: 0.5
   },
-  title: {
-    fontFamily: "nunito-extra-bold",
-    fontSize: 20,
-    color: "white"
-  },
+
   contenedorFechaHorario: {
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    marginLeft: 18,
+    marginRight: 18,
+    fontSize: 8
   },
   fecha: {
     fontSize: 12,
     flex: 1,
-    color: "white",
-    fontFamily: "nunito-light",
+    color: Colors.primaryColor,
+    fontFamily: "nunito-light"
   },
   horario: {
     fontSize: 12,
     flex: 1,
-    color: "white",
-    fontFamily: "nunito-light",
+    color: Colors.primaryColor,
+    fontFamily: "nunito-light"
   },
   descripcion: {
     fontSize: 13,
-    color: "white",
+    color: Colors.primaryColor,
     fontFamily: "nunito-light",
+    margin: 18
   },
   bgImage: {
-    width: 100,
-    height: 100
+    width: screenWidth - 40,
+    height: screenWidth / 2,
+    padding: 10,
+    margin: 10
+  },
+
+  title: {
+    fontFamily: "nunito-extra-bold",
+    color: Colors.primaryColor,
+    width: "100%",
+    fontSize: 16,
+    margin: 18
   }
 });
 

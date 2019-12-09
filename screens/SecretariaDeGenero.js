@@ -11,8 +11,10 @@ const SecretariaDeGenero = props => {
     );
 };
 SecretariaDeGenero.navigationOptions = {
-  headerTitle: "Secretaria de Genero"
- 
+  headerTitle: "Secretaria de Genero",
+  headerTitleStyle: {
+    fontFamily: 'nunito-light'
+  },
 };
 
 

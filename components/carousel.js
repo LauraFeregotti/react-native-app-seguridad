@@ -30,9 +30,11 @@ const MyCarousel = props => {
           parallaxFactor={0.4}
           {...parallaxProps}
         />
-        <Text style={styles.title} numberOfLines={2}>
-          {item.title}
-        </Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title} numberOfLines={2}>
+            {item.title}
+          </Text>
+        </View>
       </View>
     );
   };
@@ -57,17 +59,17 @@ export default MyCarousel;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom:5,
+    marginBottom: 5
   },
   item: {
+    flex: 1,
     width: 630.364,
-    height: 354.579,
+    height: 354.579
   },
   imageContainer: {
     flex: 1,
     marginBottom: Platform.select({ ios: 0, android: 1 }), // Prevent a random Android rendering issue
-    backgroundColor: "white",
-    borderRadius: 8
+    backgroundColor: "white"
   },
   image: {
     ...StyleSheet.absoluteFillObject,
@@ -75,13 +77,21 @@ const styles = StyleSheet.create({
   },
   bgImage: {
     width: 630.364,
-    height: 354.579,
+    height: 354.579
   },
-  title:{
-    margin: 10,
+  titleContainer: {
     position: "absolute",
-    fontFamily: "nunito-light",
-    color: "#005b5c",
-   
+    width: "100%",
+    alignItems: "flex-end",
+    flexDirection: 'column',
+
   },
+  title: {
+    padding: 10,
+    color: "white",
+    backgroundColor: 'rgba(0,91,92,0.8)',
+    fontFamily: "nunito-extra-bold",
+    width: "100%",
+    fontSize: 11,
+  }
 });

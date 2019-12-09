@@ -40,7 +40,7 @@ const Talleres = props => {
 Talleres.navigationOptions = {
   headerTitle: "Talleres",
   headerTitleStyle: {
-    fontFamily:"nunito-light", 
+    fontFamily: "nunito-light", 
   },
 };
 

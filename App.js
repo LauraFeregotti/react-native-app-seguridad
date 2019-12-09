@@ -11,7 +11,8 @@ useScreens();
 const fetchFonts = () => {
  return Font.loadAsync({
     "nunito-extra-bold": require("./assets/fonts/Nunito-ExtraBold.ttf"),
-    "nunito-light": require("./assets/fonts/Nunito-Light.ttf")
+    "nunito-light": require("./assets/fonts/Nunito-Light.ttf"),
+    "roboto": require("./assets/fonts/Roboto-Regular.ttf")
   });
 };
 

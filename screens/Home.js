@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     color: "#005b5c",
     marginLeft: 25,
     fontSize: 20,
-    fontFamily: "nunito-extra-bold",
+    fontFamily: "roboto",
    
   },
   bomberosButton: {

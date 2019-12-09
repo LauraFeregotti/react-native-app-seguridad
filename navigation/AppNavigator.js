@@ -10,6 +10,8 @@ import Colors from "../constants/Colors";
 import { Platform } from "react-native";
 import { createDrawerNavigator } from "react-navigation-drawer";
 
+
+
 const AppNavigator = createStackNavigator(
   {
     Home: Home,
@@ -26,9 +28,14 @@ const AppNavigator = createStackNavigator(
       headerStyle: {
         backgroundColor: Platform.OS === "android" ? Colors.primaryColor : ""
       },
+      headerTitleStyle: {
+        fontFamily: 'nunito-light'
+      },
+      headerBackTitleStyle: {
+        fontFamily: "nunito-light"
+      },
       headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor
-    },
-    
+    }
   }
 );
 const MainNavigator = createDrawerNavigator(
@@ -58,15 +65,19 @@ const MainNavigator = createDrawerNavigator(
       headerStyle: {
         backgroundColor: Platform.OS === "android" ? Colors.primaryColor : ""
       },
+      headerTitleStyle: {
+        fontFamily: "nunito-light"
+      },
+      headerBackTitleStyle: {
+        fontFamily: "nunito-light"
+      },
       headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor
     },
-    headerTitleStyle: {
-      fontFamily:"nunito-light", 
-    }
-  },
-  {
     contentOptions: {
-      activeTintColor: Colors.primaryColor
+      activeTintColor: Colors.primaryColor,
+      labelStyle: {
+        fontFamily: "nunito-light"
+      }
     }
   }
 );
