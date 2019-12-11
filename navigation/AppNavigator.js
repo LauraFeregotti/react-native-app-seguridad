@@ -10,8 +10,6 @@ import Colors from "../constants/Colors";
 import { Platform } from "react-native";
 import { createDrawerNavigator } from "react-navigation-drawer";
 
-
-
 const AppNavigator = createStackNavigator(
   {
     Home: Home,
@@ -29,7 +27,7 @@ const AppNavigator = createStackNavigator(
         backgroundColor: Platform.OS === "android" ? Colors.primaryColor : ""
       },
       headerTitleStyle: {
-        fontFamily: 'nunito-light'
+        fontFamily: "nunito-light"
       },
       headerBackTitleStyle: {
         fontFamily: "nunito-light"

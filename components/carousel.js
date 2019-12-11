@@ -30,11 +30,22 @@ const MyCarousel = props => {
           parallaxFactor={0.4}
           {...parallaxProps}
         />
-        <View style={styles.titleContainer}>
-          <Text style={styles.title} numberOfLines={2}>
-            {item.title}
-          </Text>
-        </View>
+        <TouchableOpacity style={styles.titleContainer}
+          onPress={() => {
+           props.navigation.navigate({
+              routeName: "TallerDetalle",
+              params: {
+                tallerId: item.id
+              }
+            });
+          }}
+        >
+    
+            <Text style={styles.title} numberOfLines={2}>
+              {item.title}
+            </Text>
+          
+        </TouchableOpacity>
       </View>
     );
   };
@@ -83,15 +94,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "100%",
     alignItems: "flex-end",
-    flexDirection: 'column',
-
+    flexDirection: "column"
   },
   title: {
     padding: 10,
     color: "white",
-    backgroundColor: 'rgba(0,91,92,0.8)',
+    backgroundColor: "rgba(0,91,92,0.8)",
     fontFamily: "nunito-extra-bold",
     width: "100%",
-    fontSize: 11,
+    fontSize: 11
   }
 });

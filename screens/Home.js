@@ -16,6 +16,7 @@ import HeaderButton from "../components/HeaderButtons";
 import { Colors } from "react-native-paper";
 import MyCarousel from "../components/carousel";
 import Header from "../components/Header";
+import { CATEGORIES } from "../Data/Dummy-data";
 
 const Home = props => {
   const sipem = 4531419;
@@ -32,17 +33,13 @@ const Home = props => {
     Linking.openURL(phoneNumber);
   };
   return (
-    <ImageBackground
-      style={styles.background}
-      source={require("../assets/background.png")}
-      imageStyle={{ opacity: 0.1 }}
-    >
+    <ImageBackground style={styles.background} imageStyle={{ opacity: 0.1 }}>
       <View style={styles.screen2}>
         <Image
           style={styles.logo}
           source={require("../assets/logo.png")}
         ></Image>
-        <MyCarousel style={styles.carousel} />
+        <MyCarousel style={styles.carousel} navigation={props.navigation} />
         <View style={styles.sipemContainer}>
           <TouchableOpacity
             style={styles.sipemButton}
@@ -107,7 +104,7 @@ const styles = StyleSheet.create({
     color: "#878686",
     fontSize: 13,
     marginTop: 5,
-    fontFamily: "nunito-light",
+    fontFamily: "nunito-light"
   },
   containerSubtitulo: {
     padding: 5,
@@ -123,35 +120,32 @@ const styles = StyleSheet.create({
     color: "#005b5c",
     marginLeft: 25,
     fontSize: 20,
-    fontFamily: "roboto",
-   
+    fontFamily: "roboto"
   },
   bomberosButton: {
     flex: 1,
     borderRadius: 400,
     backgroundColor: "#005b5c",
-    marginLeft:30,
-    marginRight:10,
+    marginLeft: 30,
+    marginRight: 10,
     padding: 20,
     alignItems: "center",
-    justifyContent: "center",
-    
+    justifyContent: "center"
   },
   policiaButton: {
     flex: 1,
     borderRadius: 400,
     backgroundColor: "#005b5c",
-    marginRight:30,
-    marginLeft:10,
+    marginRight: 30,
+    marginLeft: 10,
     padding: 20,
     alignItems: "center",
-    justifyContent: "center",
-    
+    justifyContent: "center"
   },
   text: {
     color: "white",
     fontSize: 14,
-    fontFamily: "nunito-extra-bold",
+    fontFamily: "nunito-extra-bold"
   },
   sipemButton: {
     borderRadius: 25,
