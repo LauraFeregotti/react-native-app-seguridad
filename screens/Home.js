@@ -102,7 +102,7 @@ Home.navigationOptions = navData => {
 const styles = StyleSheet.create({
   subtitulo: {
     color: "#878686",
-    fontSize: 13,
+    fontSize: 12,
     marginTop: 5,
     fontFamily: "nunito-light"
   },
