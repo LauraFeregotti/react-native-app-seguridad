@@ -10,7 +10,6 @@ import {
   ImageBackground,
   TouchableOpacity
 } from "react-native";
-import Carousel from "react-native-snap-carousel";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/HeaderButtons";
 import { Colors } from "react-native-paper";
@@ -33,7 +32,10 @@ const Home = props => {
     Linking.openURL(phoneNumber);
   };
   return (
-    <ImageBackground style={styles.background} imageStyle={{ opacity: 0.1 }}>
+    <ImageBackground
+      style={styles.background}
+      source={require("../assets/background2.png")}
+    >
       <View style={styles.screen2}>
         <Image
           style={styles.logo}
@@ -49,14 +51,17 @@ const Home = props => {
           >
             <Image
               style={styles.cross}
-              source={require("../assets/emergencia-sipem-icono.png")}
+              source={require("../assets/cross.png")}
             ></Image>
-            <Text style={styles.textSipem}>SIPEM</Text>
+            <View style={styles.sipemtextcontainer}>
+              <Text style={styles.textllamara}>LLAMAR A</Text>
+              <Text style={styles.textSipem}>SIPEM</Text>
+            </View>
           </TouchableOpacity>
         </View>
 
         <View style={styles.containerSubtitulo}>
-          <Text style={styles.subtitulo}>Emergencias y urgencias médicas</Text>
+          <Text style={styles.subtitulo}>Emergencias médicas</Text>
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
@@ -86,25 +91,51 @@ const Home = props => {
 };
 Home.navigationOptions = navData => {
   return {
-    headerLeft: (
-      <HeaderButtons HeaderButtonComponent={HeaderButton}>
-        <Item
-          title="Menu"
-          iconName="ios-menu"
-          onPress={() => {
-            navData.navigation.toggleDrawer();
-          }}
-        ></Item>
-      </HeaderButtons>
-    )
+    headerTitle: (
+      <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", padding: 30, }}>
+        <Image
+          source={require("../assets/logofacu.png")}
+          style={{ width: 95, height: 28.068, }}
+        />
+      </View>
+    ),
+   headerLeft: (
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <HeaderButtons HeaderButtonComponent={HeaderButton}>
+          <Item
+            title="Menu"
+            iconName="ios-menu"
+            onPress={() => {
+              navData.navigation.toggleDrawer();
+            }}
+          ></Item>
+        </HeaderButtons>
+      </View>
+    ),
+    headerRight: <View style={{ flex: 1, flexDirection: "row" }}></View>
   };
 };
 const styles = StyleSheet.create({
+  textllamara: {
+    color: "white",
+    fontSize: 19,
+    marginBottom: -7,
+    fontFamily: "open-sans-extrabold",
+  },
+  textSipem: {
+    margin: 0,
+    color: "white",
+    fontSize: 30,
+    fontFamily: "open-sans-extrabold"
+  },
+  sipemtextcontainer: {
+    flexDirection: "column"
+  },
   subtitulo: {
-    color: "#878686",
+    color: "#777777",
     fontSize: 13,
     marginTop: 5,
-    fontFamily: "nunito-light"
+    fontFamily: "open-sans-bold"
   },
   containerSubtitulo: {
     padding: 5,
@@ -112,51 +143,52 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   cross: {
-    width: 55,
-    height: 55,
+    width: 60,
+    height: 60,
     marginRight: 25
-  },
-  textSipem: {
-    color: "#005b5c",
-    marginLeft: 25,
-    fontSize: 20,
-    fontFamily: "roboto"
   },
   bomberosButton: {
     flex: 1,
     borderRadius: 400,
-    backgroundColor: "#005b5c",
-    marginLeft: 30,
-    marginRight: 10,
-    padding: 20,
+    backgroundColor: "#005B5C",
+    marginLeft: 32,
+    marginRight: 12,
+    padding: 23,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    fontFamily: "open-sans-semibold"
   },
   policiaButton: {
     flex: 1,
     borderRadius: 400,
-    backgroundColor: "#005b5c",
-    marginRight: 30,
-    marginLeft: 10,
-    padding: 20,
+    backgroundColor: "#005B5C",
+    marginRight: 32,
+    marginLeft: 12,
+    padding: 23,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    fontFamily: "open-sans-semibold"
   },
   text: {
     color: "white",
-    fontSize: 14,
-    fontFamily: "nunito-extra-bold"
+    fontSize: 15,
+    fontFamily: "open-sans-semibold"
   },
   sipemButton: {
-    borderRadius: 25,
-    borderWidth: 2.5,
-    borderColor: "#005b5c",
-    backgroundColor: "white",
+    borderRadius: 30,
+    borderColor: 'white',
+    borderWidth: 0.1,
+    backgroundColor: "#005B5C",
     padding: 16,
-    width: "70%",
+    width: "71%",
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "row"
+    flexDirection: "row",
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
   },
   background: {
     flex: 1,
@@ -175,19 +207,18 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     width: "100%",
-    paddingVertical: 20,
+    paddingVertical: 18,
     justifyContent: "center",
     alignItems: "center"
   },
-
   sipemContainer: {
-    width: "95%",
+    width: "98%",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 25
+    paddingTop: 25,
   },
   button: {
-    width: 150,
+    width: 175,
     borderRadius: 20
   },
   secretariaGenero: {
@@ -205,10 +236,13 @@ const styles = StyleSheet.create({
     height: "100%"
   },
   logo: {
-    width: 148,
-    height: 60.688,
+    width: 139.413,
+    height: 49,
     margin: 20,
     padding: 5
+  },
+  carousel:{
+ 
   }
 });
 

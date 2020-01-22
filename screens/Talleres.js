@@ -10,6 +10,7 @@ import { CATEGORIES } from "../Data/Dummy-data";
 import Constant from "../constants/Colors";
 import Colors from "../constants/Colors";
 import ListaDeTalleres from "../components/ListaDeTalleres";
+import MyCarousel from "../components/carousel";
 
 const Talleres = props => {
   const renderGridItem = itemData => {
@@ -29,28 +30,31 @@ const Talleres = props => {
     );
   };
   return (
-    <FlatList
-      keyExtractor={(item, index) => item.id}
-      data={CATEGORIES}
-      renderItem={renderGridItem}
-      numColumns={2}
-    />
+    <View style={styles.screen}>
+      <MyCarousel style={styles.carousel} navigation={props.navigation} />
+      <FlatList
+        keyExtractor={(item, index) => item.id}
+        data={CATEGORIES}
+        renderItem={renderGridItem}
+        numColumns={1}
+      />
+    </View>
   );
 };
 Talleres.navigationOptions = {
   headerTitle: "Talleres",
   headerTitleStyle: {
-    fontFamily: "nunito-light", 
-  },
+    fontFamily: "open-sans-extrabold"
+  }
 };
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    flexDirection: "column",
+    
   }
+  
 });
 
 export default Talleres;

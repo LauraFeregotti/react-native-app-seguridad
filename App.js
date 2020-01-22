@@ -12,7 +12,10 @@ const fetchFonts = () => {
  return Font.loadAsync({
     "nunito-extra-bold": require("./assets/fonts/Nunito-ExtraBold.ttf"),
     "nunito-light": require("./assets/fonts/Nunito-Light.ttf"),
-    "roboto": require("./assets/fonts/Roboto-Regular.ttf")
+    "roboto": require("./assets/fonts/Roboto-Regular.ttf"),
+    "open-sans-extrabold": require("./assets/fonts/OpenSans-ExtraBold.ttf"),
+    "open-sans-semibold": require("./assets/fonts/OpenSans-SemiBold.ttf"),
+    "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
   });
 };
 

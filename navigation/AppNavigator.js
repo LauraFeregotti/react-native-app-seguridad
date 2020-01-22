@@ -7,8 +7,11 @@ import MapaDeEmergencia from "../screens/MapaDeEmergencia";
 import SecretariaDeGenero from "../screens/SecretariaDeGenero";
 import DOE from "../screens/DOE";
 import Colors from "../constants/Colors";
-import { Platform } from "react-native";
-import { createDrawerNavigator } from "react-navigation-drawer";
+import { Platform, StyleSheet, Text, View, Image } from "react-native";
+import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
+import SafeAreaView from "react-native-safe-area-view";
+import { Container, Content, Header, Left, Body, Icon } from "native-base";
+import {DrawerNavigator} from "react-navigation";
 
 const AppNavigator = createStackNavigator(
   {
@@ -27,10 +30,10 @@ const AppNavigator = createStackNavigator(
         backgroundColor: Platform.OS === "android" ? Colors.primaryColor : ""
       },
       headerTitleStyle: {
-        fontFamily: "nunito-light"
+        fontFamily: "open-sans-bold"
       },
       headerBackTitleStyle: {
-        fontFamily: "nunito-light"
+        fontFamily: "open-sans-bold"
       },
       headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor
     }
@@ -39,45 +42,77 @@ const AppNavigator = createStackNavigator(
 const MainNavigator = createDrawerNavigator(
   {
     Home: { screen: AppNavigator, navigationOptions: { drawerLabel: "Home" } },
-    MapaDeEmergencia: {
-      screen: MapaDeEmergencia,
-      navigationOptions: { drawerLabel: "Mapa de emergencia" }
-    },
-    Talleres: {
-      screen: Talleres,
-      navigationOptions: { drawerLabel: "Talleres" }
-    },
     SecretariaDeGenero: {
       screen: SecretariaDeGenero,
-      navigationOptions: { drawerLabel: "Secretaria de Genero" }
+      navigationOptions: { drawerLabel: "Coordinación de políticas Genero" }
     },
     DOE: {
       screen: DOE,
       navigationOptions: {
-        drawerLabel: "Dirección de orientación al estudiante"
+        drawerLabel: "Dirección de orientación al estudiante (DOE)"
+      }
+    },
+    MapaDeEmergencia: {
+      screen: MapaDeEmergencia,
+      navigationOptions: { drawerLabel: "Mapa de Emergencias" }
+    },
+    Talleres: {
+      screen: Talleres,
+      navigationOptions: { drawerLabel: "Cursos y Talleres" }
+    }
+  },
+  {
+    initialRouteName: "Home",
+    /* contentComponent: CustomNavigator, */
+    drawerOpenRoute: "DrawerOpen",
+    drawerCloseRoute: "DrawerClose",
+    drawerToggleRoute: "DrawerToggle",
+    contentOptions: {
+      activeTintColor: "#E93F5D",
+      inactiveTintColor: "black",
+      labelStyle: {
+        fontSize: 13,
+        marginLeft: 15
       }
     }
   },
+
   {
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: Platform.OS === "android" ? Colors.primaryColor : ""
       },
       headerTitleStyle: {
-        fontFamily: "nunito-light"
+        fontFamily: "open-sans-bold"
       },
       headerBackTitleStyle: {
-        fontFamily: "nunito-light"
+        fontFamily: "open-sans-bold"
       },
       headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor
     },
     contentOptions: {
       activeTintColor: Colors.primaryColor,
       labelStyle: {
-        fontFamily: "nunito-light"
+        fontFamily: "open-sans-bold"
       }
     }
   }
 );
+const CustomNavigator = (props) => (
+  <ScrollView>
+    <SafeAreaView
+      style={styles.container}
+      forceInset={{ top: 'always', horizontal: 'never' }}
+    >
+    <Text>hola</Text>
+      <DrawerItems {...props} />
+    </SafeAreaView>
+  </ScrollView>
+);
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default createAppContainer(MainNavigator);
