@@ -8,7 +8,8 @@ import {
   Platform,
   Image,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/HeaderButtons";
@@ -39,7 +40,7 @@ const Home = props => {
       <View style={styles.screen2}>
         <Image
           style={styles.logo}
-          source={require("../assets/logo.png")}
+          source={require("../assets/logo3.png")}
         ></Image>
         <MyCarousel style={styles.carousel} navigation={props.navigation} />
         <View style={styles.sipemContainer}>
@@ -92,14 +93,21 @@ const Home = props => {
 Home.navigationOptions = navData => {
   return {
     headerTitle: (
-      <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", padding: 30, }}>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "center",
+          padding: 30
+        }}
+      >
         <Image
-          source={require("../assets/logofacu.png")}
-          style={{ width: 95, height: 28.068, }}
+          source={require("../assets/logofacultad2.png")}
+          style={{ width: 104.48, height: 25.38 }}
         />
       </View>
     ),
-   headerLeft: (
+    headerLeft: (
       <View style={{ flex: 1, flexDirection: "row" }}>
         <HeaderButtons HeaderButtonComponent={HeaderButton}>
           <Item
@@ -112,7 +120,35 @@ Home.navigationOptions = navData => {
         </HeaderButtons>
       </View>
     ),
-    headerRight: <View style={{ flex: 1, flexDirection: "row" }}></View>
+    headerRight: (
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <HeaderButtons HeaderButtonComponent={HeaderButton}>
+          <Item
+            title="Menu"
+            iconName="ios-help-circle-outline"
+            onPress={() => {
+              Alert.alert(
+                "Ayuda",
+                "",
+                [
+                  {
+                    text: "Ask me later",
+                    onPress: () => console.log("Ask me later pressed")
+                  },
+                  {
+                    text: "Cancel",
+                    onPress: () => console.log("Cancel Pressed"),
+                    style: "cancel"
+                  },
+                  { text: "OK", onPress: () => console.log("OK Pressed") }
+                ],
+                { cancelable: false }
+              );
+            }}
+          ></Item>
+        </HeaderButtons>
+      </View>
+    )
   };
 };
 const styles = StyleSheet.create({
@@ -120,7 +156,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 19,
     marginBottom: -7,
-    fontFamily: "open-sans-extrabold",
+    fontFamily: "open-sans-extrabold"
   },
   textSipem: {
     margin: 0,
@@ -176,7 +212,7 @@ const styles = StyleSheet.create({
   },
   sipemButton: {
     borderRadius: 30,
-    borderColor: 'white',
+    borderColor: "white",
     borderWidth: 0.1,
     backgroundColor: "#005B5C",
     padding: 16,
@@ -184,11 +220,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowColor: "rgba(0, 0, 0, 0.1)",
     shadowOpacity: 0.8,
     elevation: 6,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
+    shadowRadius: 15,
+    shadowOffset: { width: 1, height: 13 }
   },
   background: {
     flex: 1,
@@ -215,7 +251,7 @@ const styles = StyleSheet.create({
     width: "98%",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 25,
+    paddingTop: 25
   },
   button: {
     width: 175,
@@ -236,14 +272,12 @@ const styles = StyleSheet.create({
     height: "100%"
   },
   logo: {
-    width: 139.413,
-    height: 49,
+    width: 151.74,
+    height: 53.33,
     margin: 20,
     padding: 5
   },
-  carousel:{
- 
-  }
+  carousel: {}
 });
 
 export default Home;
