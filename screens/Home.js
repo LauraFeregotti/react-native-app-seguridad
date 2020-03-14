@@ -126,26 +126,18 @@ Home.navigationOptions = navData => {
           <Item
             title="Menu"
             iconName="ios-help-circle-outline"
-            onPress={() => {
-              Alert.alert(
+            onPress={() => {  
+                Alert.alert(
                 "Ayuda",
-                "",
+                "Esta aplicación te permite llamar al servicio de emergencias médicas SIPEM. Este solo atiende pérdidas de salud de alumnxs, docentes y no docentes dentro del área protegida de la FBA. Si se tratara de un accidente de trabajo durante las horas laborables, en el trayecto de la casa a la UNLP o viceversa, debe comunicarse a la A.R.T. 0800 333 1333.",
                 [
-                  {
-                    text: "Ask me later",
-                    onPress: () => console.log("Ask me later pressed")
-                  },
-                  {
-                    text: "Cancel",
-                    onPress: () => console.log("Cancel Pressed"),
-                    style: "cancel"
-                  },
                   { text: "OK", onPress: () => console.log("OK Pressed") }
                 ],
                 { cancelable: false }
               );
-            }}
-          ></Item>
+            }} 
+          >
+          </Item>
         </HeaderButtons>
       </View>
     )

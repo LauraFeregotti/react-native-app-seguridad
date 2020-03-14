@@ -21,7 +21,7 @@ const AppNavigator = createStackNavigator(
     TallerDetalle: TallerDetalle,
     MapaDeEmergencia: MapaDeEmergencia,
     DOE: DOE,
-    SecretariaDeGenero: SecretariaDeGenero
+    SecretariaDeGenero: SecretariaDeGenero,
   },
 
   {
