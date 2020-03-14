@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { CATEGORIES } from "../Data/Dummy-data";
 import Carousel, { ParallaxImage } from "react-native-snap-carousel";
-import { Pagination } from 'react-native-snap-carousel';
+import { Pagination } from "react-native-snap-carousel";
 import {
   View,
   Dimensions,
@@ -54,8 +54,6 @@ return (
         </View>
     );*/
 
-  
-
   const carouselRef = useRef(null);
   const goForward = () => {
     carouselRef.current.snapToNext();
@@ -81,20 +79,22 @@ return (
             });
           }}
         >
-        <Text style={styles.tipo} numberOfLines={2}>
-            {item.tipo}
-          </Text>
-          <Text style={styles.title} numberOfLines={2}>
-            {item.title}
-          </Text>
-
+          <View>
+            <Text style={styles.tipo} numberOfLines={2}>
+              {item.tipo}
+            </Text>
+          </View>
+          <View>
+            <Text numberOfLines={2} style={styles.title}>
+              {item.title}
+            </Text>
+          </View>
         </TouchableOpacity>
       </View>
     );
   };
   return (
     <View style={styles.container}>
-
       <Carousel
         ref={carouselRef}
         sliderWidth={screenWidth}
@@ -104,7 +104,6 @@ return (
         renderItem={_renderItem}
         hasParallaxImages={true}
       />
-   
     </View>
   );
 };
@@ -113,56 +112,36 @@ export default MyCarousel;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom: 5,
+    marginBottom: 25,
   },
   item: {
     flex: 1,
-    width: 630.364,
-    height: 354.579,
-    padding:10,
+    justifyContent: "flex-end"
   },
   imageContainer: {
     flex: 1,
     marginBottom: Platform.select({ ios: 0, android: 1 }), // Prevent a random Android rendering issue
     backgroundColor: "white",
-    borderRadius: 20,
-    
+    borderRadius: 20
   },
   image: {
     ...StyleSheet.absoluteFillObject,
-    resizeMode: "cover",
-    borderRadius: 20,
-  },
-  bgImage: {
-    width: 630.364,
-    height: 354.579,
-    borderRadius: 20,
+    resizeMode: "cover"
   },
   titleContainer: {
     position: "absolute",
-    width: "100%",
-    flexDirection: "column-reverse",
-    alignContent: "flex-end",
-    justifyContent: "flex-end"
+    flex: 1,
+    margin: 20,
+    padding: 5
   },
   title: {
-    padding: 10,
     color: "white",
     fontFamily: "open-sans-extrabold",
-    width: "100%",
-    fontSize: 25,
-    flexDirection: "column-reverse",
-    alignContent: "flex-end",
-    justifyContent: "flex-end"
+    fontSize: 25
   },
-  tipo:{
-    padding: 10,
+  tipo: {
     color: "white",
     fontFamily: "open-sans-extrabold",
-    width: "100%",
-    fontSize: 11,
-    alignContent: "flex-end",
-    justifyContent: "flex-end",
-    flexDirection: "column-reverse",
+    fontSize: 11
   }
 });
