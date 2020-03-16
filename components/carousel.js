@@ -11,56 +11,17 @@ import {
   Text
 } from "react-native";
 import { Colors } from "react-native-paper";
-
 const { width: screenWidth } = Dimensions.get("window");
 
 const MyCarousel = props => {
-  /*const[state, setState] = useState ({entries, activeSlide});
-  const _renderItem = ({item, index}) =>{
-    return <MySlideComponent data={item} />
-}
-
-const pagination = () => {
- 
-    return (
-        <Pagination
-          dotsLength={state.entries.length}
-          activeDotIndex={state.activeSlide}
-          containerStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.75)' }}
-          dotStyle={{
-              width: 10,
-              height: 10,
-              borderRadius: 5,
-              marginHorizontal: 8,
-              backgroundColor: 'rgba(255, 255, 255, 0.92)'
-          }}
-          inactiveDotStyle={{
-              // Define styles for inactive dots here
-          }}
-          inactiveDotOpacity={0.4}
-          inactiveDotScale={0.6}
-        />
-    );
-}
-
-return (
-        <View>
-            <Carousel
-              data={CATEGORIES}
-              renderItem={_renderItem}
-              onSnapToItem={(index) => setState({ activeSlide: index }) }
-            />
-            { pagination }
-        </View>
-    );*/
-
   const carouselRef = useRef(null);
   const goForward = () => {
     carouselRef.current.snapToNext();
   };
-  const _renderItem = ({ item, index }, parallaxProps) => {
+  const _renderItem = ({ item, id }, parallaxProps) => {
     return (
       <View style={styles.item}>
+        
         <ParallaxImage
           source={{ uri: item.imageUrl }}
           containerStyle={styles.imageContainer}
@@ -93,6 +54,8 @@ return (
       </View>
     );
   };
+ 
+
   return (
     <View style={styles.container}>
       <Carousel
@@ -102,7 +65,7 @@ return (
         itemWidth={screenWidth - 40}
         data={CATEGORIES}
         renderItem={_renderItem}
-        hasParallaxImages={true}
+        hasParallaxImages={true} 
       />
     </View>
   );
@@ -112,7 +75,7 @@ export default MyCarousel;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom: 25,
+    marginBottom: 25
   },
   item: {
     flex: 1,

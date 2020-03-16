@@ -1,6 +1,6 @@
 
 class Category {
-  constructor(id, title, imageUrl, fecha, horario, lugar, descripcion, tipo) {
+  constructor(id, title, imageUrl, fecha, horario, lugar, descripcion, tipo, area) {
     this.id = id;
     this.title = title;
     this.imageUrl = imageUrl;
@@ -9,6 +9,7 @@ class Category {
     this.lugar = lugar;
     this.descripcion = descripcion;
     this.tipo = tipo;
+    this.area = area;
      
 
 } }

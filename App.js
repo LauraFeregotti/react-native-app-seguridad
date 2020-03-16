@@ -16,6 +16,7 @@ const fetchFonts = () => {
     "open-sans-extrabold": require("./assets/fonts/OpenSans-ExtraBold.ttf"),
     "open-sans-semibold": require("./assets/fonts/OpenSans-SemiBold.ttf"),
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
+    "open-sans-regular": require("./assets/fonts/OpenSans-Regular.ttf"),
   });
 };
 
